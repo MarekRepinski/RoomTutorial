@@ -13,8 +13,8 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 import se.ctescape.roomtutorial.R
-import se.ctescape.roomtutorial.data.User
-import se.ctescape.roomtutorial.data.UserViewModel
+import se.ctescape.roomtutorial.model.User
+import se.ctescape.roomtutorial.viewmodel.UserViewModel
 
 class AddFragment : Fragment() {
     private lateinit var mViewModel: UserViewModel
@@ -28,7 +28,7 @@ class AddFragment : Fragment() {
 
         mViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        v.btnSave.setOnClickListener {
+        v.update_btn.setOnClickListener {
             insertDataToDataBase()
         }
 
@@ -36,9 +36,9 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDataToDataBase() {
-        val firstName = etFirstName.text.toString()
-        val lastName = etLastName.text.toString()
-        val age = etAge.text
+        val firstName = update_firstName_et.text.toString()
+        val lastName = update_lastName_et.text.toString()
+        val age = update_age_et.text
 
         if (checkInput(firstName, lastName, age)){
             //Create user object

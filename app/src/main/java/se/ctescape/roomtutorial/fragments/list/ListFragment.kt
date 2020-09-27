@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_list.view.*
 import se.ctescape.roomtutorial.R
-import se.ctescape.roomtutorial.data.UserViewModel
+import se.ctescape.roomtutorial.viewmodel.UserViewModel
 
 class ListFragment : Fragment() {
 
